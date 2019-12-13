@@ -1,3 +1,9 @@
+body {
+  background-color: dodgerblue;
+  color: white;
+  font-family: 'Futura';
+}
+
 .App {
   text-align: center;
 }
