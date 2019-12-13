@@ -24,4 +24,5 @@ export const addSmurf = (name, age, height) => {
     height: height,
     id: new Date(),
   })
+  // .then( () => getSmurfs())
 }

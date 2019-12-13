@@ -3,6 +3,15 @@ body {
   color: white;
   font-family: 'Futura';
   box-sizing: border-box;
+  font-size: 62.5%
+}
+
+h1, h2, h3 {
+  font-size: 2.3rem;
+}
+
+p {
+  font-size: 1.6rem;
 }
 
 .App {
@@ -39,19 +48,27 @@ body {
 
 .smurf-list {
   /* border: 1px solid red; */
-  width: 80%;
+  width: 97%;
   margin: 10px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
 .smurf-card {
   background-color: white;
-  border: 10px solid black;
+  border: 10px solid darkslategray;
   border-radius: 25px;
   color: dodgerblue;
   margin: 10px;
   width: 250px;
   padding: 5px;
+}
+
+form > * {
+  margin: 0px 5px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  font-family: 'Futura';
 }
