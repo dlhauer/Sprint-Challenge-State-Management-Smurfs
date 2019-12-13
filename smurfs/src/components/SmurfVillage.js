@@ -1,9 +1,15 @@
-  import React from 'react';
+  import React, {useEffect} from 'react';
   import Smurf from './Smurf';
+  import {getSmurfs} from '../actions/smurfActions';
 
   import { connect } from 'react-redux';
 
   const SmurfVillage = props => {
+    
+    useEffect( () => {
+      props.getSmurfs();
+    }, []);
+
     return (
       <div className='smurf-list'>
         {props.smurfs.map( (smurf, index) => (
@@ -23,5 +29,5 @@
 
   export default connect(
     mapStateToProps,
-    {}
+    {getSmurfs}
   )(SmurfVillage);
