@@ -1,5 +1,6 @@
 import React from 'react';
 import useInput from '../hooks/useInput';
+import {getSmurfs, addSmurf} from '../actions/smurfActions';
 
 function SmurfForm(props) {
   const [name, setName, handleNameChange] = useInput('');
@@ -8,11 +9,14 @@ function SmurfForm(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log('hello from handleSubmit!')
+    // console.log('hello from handleSubmit!')
+    addSmurf(name, age, height);
+    getSmurfs();
     setName('');
     setAge('');
     setHeight('');
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <input

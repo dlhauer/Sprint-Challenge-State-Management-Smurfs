@@ -16,3 +16,12 @@ export const getSmurfs = () => dispatch => {
       dispatch({ type: FETCH_SMURFS_FAILURE, payload: err})
     })
 }
+
+export const addSmurf = (name, age, height) => {
+  axios.post('http://localhost:3333/smurfs', {
+    name: name,
+    age: age,
+    height: height,
+    id: new Date(),
+  })
+}
