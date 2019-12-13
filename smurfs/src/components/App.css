@@ -47,11 +47,10 @@ p {
 }
 
 .smurf-list {
-  /* border: 1px solid red; */
   width: 97%;
   margin: 10px 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
 }
 

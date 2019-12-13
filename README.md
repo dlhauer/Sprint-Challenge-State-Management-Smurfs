@@ -23,10 +23,24 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+Context API solves the problem of multiple components in the Component Tree needing access to the same state. Without Context, the only way for those components to get that state is through a lot of prop-drilling, which can get cumbersome and confusing in large apps.
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+The Redux store is where all of our Application state lives. Actions are objects which contain information to be sent to the store. Once sent to the store, the actions are interpreted by the reducer, which implements the necessary logic to return a new state object. The store being a ‘single source of truth’ means that the reducer is the only way to change Application state. State is never mutated.
+
 - [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is global, accessible to all Components in the App, whereas Component state is local, accessible only to that Component. It’s a good idea to use Component state for something like a simple text input, the value of which can then be passed to Application state, if necessary.
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+redux-thunk allows us to intercept the flow of action to reducer and perform an asynchronous operation, such as making an API call. It changes our action-creators by having them return a function with the dispatch function passed as an argument.
+
 - [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Redux! Can’t say why, exactly. I just like the logic of it. Plus, it seems like I’m having an easier time with it than a lot of other students, so, I don’t know, maybe this is an area where I’ll shine?
 
 ## Project Set Up
 

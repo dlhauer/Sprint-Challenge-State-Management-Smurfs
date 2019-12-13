@@ -1,7 +1,6 @@
 import React from 'react';
 import useInput from '../hooks/useInput';
-import {getSmurfs, addSmurf} from '../actions/smurfActions';
-import { connect } from 'react-redux';
+import { addSmurf } from '../actions/smurfActions';
 
 function SmurfForm(props) {
   const [name, setName, handleNameChange] = useInput('');
@@ -9,10 +8,7 @@ function SmurfForm(props) {
   const [height, setHeight, handleHeightChange] = useInput('');
 
   const handleSubmit = e => {
-    // e.preventDefault();
-    // console.log('hello from handleSubmit!')
     addSmurf(name, age, height);
-    // props.getSmurfs();
     setName('');
     setAge('');
     setHeight('');
@@ -43,15 +39,4 @@ function SmurfForm(props) {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    smurfs: state.smurfs,
-    isFetching: state.isFetching,
-    error: state.error,
-  }
-}
-
-export default connect(
-  mapStateToProps,
-  {getSmurfs}
-)(SmurfForm);
+export default SmurfForm;
