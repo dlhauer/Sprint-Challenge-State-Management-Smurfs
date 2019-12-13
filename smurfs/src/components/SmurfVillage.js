@@ -1,10 +1,27 @@
   import React from 'react';
   import Smurf from './Smurf';
 
-  function SmurfVillage(props) {
+  import { connect } from 'react-redux';
+
+  const SmurfVillage = props => {
     return (
-      <Smurf/>
+      <div className='smurf-list'>
+        {props.smurfs.map( (smurf, index) => (
+          <Smurf key={index} smurf={smurf}/>
+        ) )}
+      </div>
     );
   }
 
-  export default SmurfVillage;
+  const mapStateToProps = state => {
+    return {
+      smurfs: state.smurfs,
+      isFetching: state.isFetching,
+      error: state.error,
+    }
+  }
+
+  export default connect(
+    mapStateToProps,
+    {}
+  )(SmurfVillage);
